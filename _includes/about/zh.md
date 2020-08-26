@@ -1,33 +1,58 @@
 > 离开世界之前，一切都是过程。
 
-Hi，我是黄玄，前端娱乐圈 NPC，编程语言/编译器初心者，[Facebook](https://www.facebook.com/) 签约软件工程师，[广院](https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E4%BC%A0%E5%AA%92%E5%A4%A7%E5%AD%A6)认证数字设计师，曾被招募为阿里巴巴 · [阿里旅行（飞猪）](http://alitrip.com)· 前端工程师、微影时代 · 微票儿 · 前端基础设施工程团队负责人、[饿了么](https://ele.me/) · 大前端团队 · [PWA 顾问](https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509) 等。
-
-目前的物理活动范围主要在美帝硅谷，分身日常出没于[博客](https://huangxuan.me)、[微博](https://weibo.com/huxpro)、[知乎](https://www.zhihu.com/people/huxpro/pins/posts)、[Twitter](https://twitter.com/Huxpro/)、[Github](https://github.com/huxpro)、[Medium](https://medium.com/@Huxpro)。
+Hi，我是吴琰，分身常驻于[知乎](https://www.zhihu.com/people/wu-yan-98-14)、[Github](https://github.com/Lov3Camille)
 
 
-##### [我的编程语言可视化 (WIP 🚧)](https://huangxuan.me/2020/05/05/pl-chart/)
+##### 求学经历
 
-这个图表可视化了我对于各种编程语言的使用经历、兴趣，还附带了一些评语和解释等等。 啊我知道对比编程语言是一件很有争议的事情……自娱自乐一下！不要太较真哦 ;)
+2013.08 - 2017.06 中国人民解放军国防科技大学 外国语言文学
 
+2020.09 - 2021.11 香港中文大学 信息工程
 
-##### 演讲与分享
+##### 工作经历
 
-- [Upgrading to Progressive Web Apps][9] · [JSConf CN 上海 2017](http://2017.jsconf.cn/)
-- Building Progressive Web Apps · [CSDI 广州 2017](http://www.csdisummit.com/)
-- The State of Progressive Web App · GDG IO Redux 北京 2017
-- 炒冷饭 · PWA 到底是个什么玩意？· Baidu HQ 北京 2017
-- [Service Worker 101][5] · GDG DevFest 北京 2016
-- [Progressive Web App，复兴序章][4] · [QCon 上海 2016](http://2016.qconshanghai.com/presentation/3111)
-- Progressive Web App 之我见 · GDG IO Redux 北京 2016
-- [CSS Still Sucks 2015][2] · 2015
-- [JavaScript 模块化七日谈][1] · 2015
+2018.05 - 2020.04 上海汉得信息技术股份有限公司 技术顾问
 
-[1]: //huangxuan.me/2015/07/09/js-module-7day/
-[2]: //huangxuan.me/2015/12/28/css-sucks-2015/
-[3]: //huangxuan.me/2016/06/05/pwa-in-my-pov/
-[4]: //huangxuan.me/2016/10/20/pwa-qcon2016/
-[5]: //huangxuan.me/2016/11/20/sw-101-gdgdf/
-[6]: https://yanshuo.io/assets/player/?deck=58ac8598b123db0067292f92 "PWA Rehashing"
-[7]: https://yanshuo.io/assets/player/?deck=593ad6fbfe88c2006a0a0d6d "The State of PWA"
-[8]: https://yanshuo.io/assets/player/?deck=594d673d570c357d0698a950 "Building PWA"
-[9]: //huangxuan.me/jsconfcn2017/
+##### 项目经历
+
+2019.06 - 2020.03 康龙化成新药技术股份有限公司Oracle Fusion实施项目                                                       
+Role: 业务顾问
+
+为北京康龙化成医药股份有限公司客制化并部署Oracle Cloud ERP软件，以助他们分析并管理日常商业活动：
+1. 对用户总体需求进行调研，以最大化满足用户个性化需求为主；
+2. 大部分开发在PaaS平台（Oracle Cloud Platform）上进行，部署数据库，开发网页应用；
+3. 利用Oracle提供的标准的SOAP接口或RESTful接口与SaaS平台对接，尽量做到业务数据自动化处理。
+
+2019.03 - 2019.06 Optiver Oracle BI 报表优化项目                                                            
+Role: 执行经理
+
+充分利用Oracle Cloud为Optiver（上海）公司的财务用户开发报表，包括资产/总账/现金/应付/应收五大模块：
+1. 组织项目成员与客户进行多次Brainstorming会议，制定阶段化目标；
+2. 利用OTBI/Smart View/BIP等多种报表设计平台开发报表；
+3. 为每份报表的开发撰写详细的设计文档以及PL/SQL代码技术文档，并交付客户。
+
+2018.06 - 2018.12 日立（日本）EBS服务器迁移项目                             						     
+Role: 业务顾问
+
+与客户方DBA协作，为日立电梯（日本）关键用户的EBS系统进行服务器迁移：
+1. 参与前期需求调研与关键数据收集；
+2. 在DEV／UAT环境为全部超过五百个模块／子模块的功能或报表进行测试；
+3. 负责项目结束后为期两个月的运维工作。
+
+##### 竞赛于荣誉
+
+2017.05 全国大学生英语竞赛二等奖                                    　　　　　　　　　　　　　　　　　　 
+2016.10 校级优秀学员                                                                	　				 
+2016.03 校信息安全大赛一等奖                               　　　　　　　　　　　　　　　　　　			
+2015.03 校物理竞赛一等奖                                                              　　　　　　　　　  
+2014.06 校麒麟软件设计大赛二等奖　　　　　　　　　　　　　　　　　　　　　　　　　 	                      
+
+##### 技能栈
+
+程序设计语言: Python, Java, SQL			
+证书: 计算机等级考试四级（网络工程师）
+
+##### 标准化测试
+
+TEM-8：优秀
+IELTS: 6.5
