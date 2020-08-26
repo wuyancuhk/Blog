@@ -14,7 +14,7 @@ tags:
 > “Yeah It's on. ”
 
 
-Hux 的 Blog 就这么开通了。
+Wuy 的 Blog 就这么开通了。
 
 
 ## 正文
