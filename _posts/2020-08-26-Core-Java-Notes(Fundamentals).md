@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Core Java - History Notes"
-subtitle:   " \"Java Knowledge - Fundamentals\""
+subtitle:   " \"JAVA Knowledge - Fundamentals\""
 date:       2020.08.26 19:00:00
 author:     "Wuy"
 header-img: "img/post-bg-2020.jpg"
@@ -32,3 +32,6 @@ tags:
 *“持续更新中”*
 
 详见其他博文：
+
+[Daily Notes 1: 异常的基本概念、如何声明检查型异常]: http://lov3camille.top/2020/08/27/Core-Java-Notes(Advanced-Features)/
+
