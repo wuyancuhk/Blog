@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Core Java"
-subtitle:   " \"Basic Java Knowledge\""
+title:      "Core Java - History Notes"
+subtitle:   " \"Java Knowledge - Fundamentals\""
 date:       2020.08.26 19:00:00
 author:     "Wuy"
 header-img: "img/post-bg-2020.jpg"

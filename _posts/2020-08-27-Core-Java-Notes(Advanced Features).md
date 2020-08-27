@@ -1,7 +1,7 @@
 ---
 
 layout:     post
-title:      "Core Java"
+title:      "Core Java - Daily Notes - 01"
 subtitle:   " \"JAVA Knowledge - Advanced Features\""
 date:       2020.08.27 15:00:00
 author:     "Wuy"
