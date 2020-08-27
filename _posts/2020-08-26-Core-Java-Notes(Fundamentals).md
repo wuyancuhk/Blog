@@ -4,7 +4,7 @@ title:      "Core Java"
 subtitle:   " \"Basic Java Knowledge\""
 date:       2020.08.26 19:00:00
 author:     "Wuy"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-2020.jpg"
 catalog: true
 tags:
     - 学习笔记
@@ -31,3 +31,4 @@ tags:
 
 *“持续更新中”*
 
+详见其他博文：
