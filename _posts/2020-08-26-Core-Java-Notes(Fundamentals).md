@@ -34,4 +34,5 @@ tags:
 详见其他博文：
 
 [Daily Notes 1: 异常的基本概念、如何声明检查型异常](http://lov3camille.top/2020/08/27/Core-Java-Notes(Advanced-Features)/)
+
 [Daily Notes 2: 如何抛出、创建和捕获异常](http://lov3camille.top/2020/08/28/Core-Java-Notes(Advanced-Features)/)
