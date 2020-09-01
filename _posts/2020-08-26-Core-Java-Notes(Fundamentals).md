@@ -37,8 +37,9 @@ tags:
 
 2. [Daily Notes 2: 如何抛出、创建和捕获异常](http://lov3camille.top/2020/08/28/Core-Java-Notes(Advanced-Features)/)
 
-3. [Daily Notes 3: 分析堆栈轨迹元素、使用异常的技巧]:(http://lov3camille.top/2020/08/31/Core-Java-Notes(Advanced-Features)/)
+3. [Daily Notes 3: 分析堆栈轨迹元素、使用异常的技巧](http://lov3camille.top/2020/08/31/Core-Java-Notes(Advanced-Features)/)
 
-4. [Daily Notes 4: 如何使用断言]:(http://lov3camille.top/2020/09/01/Core-Java-Notes(Advanced-Features)/)
+4. [Daily Notes 4: 如何使用断言](http://lov3camille.top/2020/09/01/Core-Java-Notes(Advanced-Features)/)
 
    
+
