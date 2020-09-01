@@ -113,3 +113,8 @@ public class StackTraceTest
 
 4. 不要压制异常
 
+5. 在检测错误时，“苛刻”要比放任更好
+
+   比如说，当栈为空时，最好是抛出一个`EmptyStackException`异常，而不是抛出一个`null`，这样以后还是会抛出`NullPointerExcepyion`异常，得不偿失。
+
+6. 不要羞于传递异常（早抛出，晚捕获）

@@ -33,6 +33,12 @@ tags:
 
 详见其他博文：
 
-[Daily Notes 1: 异常的基本概念、如何声明检查型异常](http://lov3camille.top/2020/08/27/Core-Java-Notes(Advanced-Features)/)
+1. [Daily Notes 1: 异常的基本概念、如何声明检查型异常](http://lov3camille.top/2020/08/27/Core-Java-Notes(Advanced-Features)/)
 
-[Daily Notes 2: 如何抛出、创建和捕获异常](http://lov3camille.top/2020/08/28/Core-Java-Notes(Advanced-Features)/)
+2. [Daily Notes 2: 如何抛出、创建和捕获异常](http://lov3camille.top/2020/08/28/Core-Java-Notes(Advanced-Features)/)
+
+3. [Daily Notes 3: 分析堆栈轨迹元素、使用异常的技巧]:(http://lov3camille.top/2020/08/31/Core-Java-Notes(Advanced-Features)/)
+
+4. [Daily Notes 4: 如何使用断言]:(http://lov3camille.top/2020/09/01/Core-Java-Notes(Advanced-Features)/)
+
+   
