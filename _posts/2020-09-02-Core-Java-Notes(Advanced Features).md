@@ -86,3 +86,40 @@ logger.fine(message);
 logger.log(Lever.FINE, message);
 ```
 
+默认的日志记录将显示根据调用堆栈得出的包含日志调用的类名和方法名，不过，如果虚拟机对执行过程进行了优化，就得不到准确的调用信息，此时，可以使用`logp`方法获得调用类和方法的确切位置，这个方法的示例如下:
+
+```java
+log.logp(Level.WARNING, String.valueOf(Main.class), "factorial", "test" );
+```
+
+当然，记录日志的常见用途是记录那些预料之外的异常，可以使用如下两个便利的方法：
+
+```java
+if (...)
+{
+    var e = new IOException("...");
+    logger.throwing("DailyTest.Main", "read", e);//format: void throwing(String className, String methodName, Throwable t)
+    throw e;
+}
+```
+
+或者：
+
+```java
+try
+{
+	...
+}
+catch (IOException e)
+{
+	Logger.getLogger("DailyTest.Main").log(Level.WARNING, "Reading Message", e);//format: void log(Level l, String message, Throwable t)
+}
+```
+
+### 5.3. 日志技巧
+
+下面总结以下日志的使用技巧：
+
+1. 对一个简单的应用，选择一个日志记录器，并且可以为有大量日志记录活动的类增加静态字段；
+2. 默认的日志配置会把级别等于或高于`INFO`的所有消息记录到控制台，用户可以覆盖这个默认配置；
+3. 要牢记：所有级别为`INFO`、`WARNING`、`SEVERE`的消息都将显示在控制台上，所以，最好将对用户有意义的消息设置为这几个级别，将想要的日志消息设定为`FINE`级别是一个很好的选择。
