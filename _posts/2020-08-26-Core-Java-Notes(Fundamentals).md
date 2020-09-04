@@ -41,5 +41,7 @@ tags:
 
 4. [Daily Notes 4: 如何使用断言](http://lov3camille.top/2020/09/01/Core-Java-Notes(Advanced-Features)/)
 
+5. [Daily Notes 5: 基本日志、高级日志以及日志的使用技巧](http://lov3camille.top/2020/09/02/Core-Java-Notes(Advanced-Features)/)
+
    
 
