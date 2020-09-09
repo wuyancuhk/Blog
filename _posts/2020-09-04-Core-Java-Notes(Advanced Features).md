@@ -153,3 +153,7 @@ while (!Thread.currentThread().isinterrupted() && ...)
 但是，如果线程被阻塞，就无法检查中断状态，这里就要引入`InterruptedException`异常。当在一个被`sleep`或`wait`调用阻塞的线程上调用`interrupt`方法时，哪个阻塞调用将被一个`InterruptionException`异常中断。（有些阻塞`I/O`调用不能被中断，对此要选择可中断的调用）
 
 如果设置了中断状态，此时如果调用`sleep`方法，它不会休眠，实际上，他会清除中断状态并抛出`InterruptionException`。因此，如果循环调用的`sleep`方法，不要检测中断状态，而是应当捕获`InterruptionException`异常。
+
+有两个非常类似的方法，`interrupted`和`isInterrupted`， 前者是一个静态方法，会清除该线程的中断状态，另一方面，后者是一个实例方法，可以用来检查是否有线程被中断，调用这个方法不会改变中断状态。
+
+注意，发布的代码最好不要抑制`InterruptionException`异常，抛出它或者设置中断状态都行。
