@@ -42,7 +42,7 @@ CodeQL是Github Security Lab的一个开源的代码分析引擎，主要用来�
 
 如下如所示：
 
-![image-20200909164815176](file://C:/Users/MSI-NB/AppData/Roaming/Typora/typora-user-images/image-20200909164815176.png?lastModify=1599834005)
+![image-20200911233006210](https://raw.githubusercontent.com/Lov3Camille/postimage/master/20200911233006.png)
 
 ##### 2.1.2. 块加密（Block Cipher）
 
@@ -64,13 +64,13 @@ ECB模式作为一种基本工作模式，具有操作简单，易于实现的�
 
 示例如下：
 
-![image-20200909165743981](file://C:/Users/MSI-NB/AppData/Roaming/Typora/typora-user-images/image-20200909165743981.png?lastModify=1599834050)
+![image-20200911232818818](https://raw.githubusercontent.com/Lov3Camille/postimage/master/20200911232818.png)
 
 ##### 2.1.4. 密文分组链接模式（Cipher Block Chaining Mode）
 
 之所以叫CBC Mode这个名字，是因为密文分组像链条一样相互连接在一起。在CBC模式中，首先将明文分组与前一个密文分组进行XOR运算，然后再进行加密。它的加解密过程如下：
 
-![img](https://img-blog.csdn.net/20180901170843459?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoZW5ncWl1bWluZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![image-20200911232844446](https://raw.githubusercontent.com/Lov3Camille/postimage/master/20200911232844.png)
 
 当加密第一个明文分组时，由于不存在“前一个密文分组”，因此需要事先准备一个长度为一个分组的比特序列来代替“前一个密文分组”，这个比特序列称为初始化向量（Initialization Vector），通常缩写为IV，一般来说，每次加密时都会随机产生一个不同的比特序列来作为初始化向量。这样一来，ECB Mode的缺陷在CBC Mode中就不存在了。
 
@@ -82,7 +82,7 @@ ECB模式作为一种基本工作模式，具有操作简单，易于实现的�
 
 由于密文的不可区分性,不应该使用这种不安全的加密方式.在Android SDK的源码中,有这样一段话(源码似乎把lookup打错成loopup了):
 
-![image-20200909193516213](C:\Users\MSI-NB\AppData\Roaming\Typora\typora-user-images\image-20200909193516213.png)
+![image-20200909193516213](https://raw.githubusercontent.com/Lov3Camille/postimage/master/20200911232906.png)
 
 这里如果调用`javax.crypto.Ciphere.getInstance`方法的话,如果没有明确指出加密方式,则会默认为ECB模式.此为漏洞一.
 
