@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Core Java - Daily Notes - 07"
-subtitle:   " \"JAVA Knowledge - Advanced Features\""
+title:      "CodeQL - Daily Notes - 01"
+subtitle:   " \"Using CodeQL to find security risks in mainstream applications\""
 date:       2020.09.09 15:29:00
 author:     "Wuy"
 header-img: "img/post-bg-2020.jpg"
