@@ -42,7 +42,7 @@ CodeQL是Github Security Lab的一个开源的代码分析引擎，主要用来�
 
 如下如所示：
 
-![image-20200909164815176](C:\Users\MSI-NB\AppData\Roaming\Typora\typora-user-images\image-20200909164815176.png)
+![image-20200909164815176](file://C:/Users/MSI-NB/AppData/Roaming/Typora/typora-user-images/image-20200909164815176.png?lastModify=1599834005)
 
 ##### 2.1.2. 块加密（Block Cipher）
 
@@ -64,7 +64,7 @@ ECB模式作为一种基本工作模式，具有操作简单，易于实现的�
 
 示例如下：
 
-![image-20200909165743981](C:\Users\MSI-NB\AppData\Roaming\Typora\typora-user-images\image-20200909165743981.png)
+![image-20200909165743981](file://C:/Users/MSI-NB/AppData/Roaming/Typora/typora-user-images/image-20200909165743981.png?lastModify=1599834050)
 
 ##### 2.1.4. 密文分组链接模式（Cipher Block Chaining Mode）
 
