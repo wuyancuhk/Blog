@@ -95,11 +95,11 @@ ECB模式作为一种基本工作模式，具有操作简单，易于实现的�
 算法拥有者称之为挑战者，算法攻击者称之为攻击者
 
 1. 挑战者拥有公钥PK，私钥SK，将PK发给攻击者。
-2. 攻击者选取长度相等的两个明文，M1，M2，发给挑战者
-3. 挑战者获得明文后，然后随机决定b的取值，![b=\left \{ 0 \right 1\}](https://private.codecogs.com/gif.latex?b%3D%5Cleft%20%5C%7B%200%20%5Cright%201%5C%7D)，然后决定对于Mb的加密，![C=Enc(PK,Mb)](https://private.codecogs.com/gif.latex?C%3DEnc%28PK%2CMb%29),然后发给攻击者
-4. 攻击者获得密文后，给出b的值，即确定是对M1的加密，还是对M2的加密
+2. 攻击者选取长度相等的两个明文，M1，M2，发给挑战者。
+3. 挑战者获得明文后，然后随机决定b的取值，$b = {0, 1}$，然后决定对于Mb的加密，$C=Enc(PK,Mb)$，然后发给攻击者。
+4. 攻击者获得密文后，给出b的值，即确定是对M1的加密，还是对M2的加密。
 
-准确得到b的值的优势=![advanced=\frac{1}{2}+\varepsilon](https://private.codecogs.com/gif.latex?advanced%3D%5Cfrac%7B1%7D%7B2%7D&plus;%5Cvarepsilon)，如果![\varepsilon](https://private.codecogs.com/gif.latex?%5Cvarepsilon)的值可以忽略，就说明该加密算法是安全的，反之则是不安全的.
+准确得到b的值的优势$= \frac{1}{2} + \varepsilon$，如果的值可以忽略，就说明该加密算法是安全的，反之则是不安全的。
 
 在Android SDK中, 初始化向量是被直接声明的, 声明为“13579246810123456”, 然后通过静态方法`DatatypeConverter.parseHexBinary`转化为字节数组,之后,这一数组会作为`javax.crypto.spec.IvParameterSpec`构造器方法里的一个参数被直接调用.
 
