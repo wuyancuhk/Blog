@@ -29,12 +29,11 @@ tags:
 
 Linked Resources
 
-- [Hadoop: Setting up Hadoop 2.6.0 (single node) on AWS EC2 Ubuntu AMI | Sagar Ruchandani's blog - https://sagarruchandani.wordpress.com/2015/08/01/h...](https://sagarruchandani.wordpress.com/2015/08/01/hadoop-setting-up-hadoop-2-6-0-single-node-on-aws-ec2-ubuntu-ami)
 - [Simplify Your Life With an SSH Config File - http://nerderati.com/2011/03/17/simplify-your-life...](http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file)
 
 #### 01.02 Setup Amazon AWS EC2 Instances
 
-##### Build EC2 Instances
+##### 01.02.01 Build EC2 Instances
 
 ###### Choose Instance Type
 
@@ -71,26 +70,25 @@ Add a tag with the following settings:
 | Port Range          | 0 - 65535                  |
 | Source              | Anywhere (0.0.0.0/0, ::/0) |
 
-##### Generate Public and Private Key Pairs
+##### 01.02.02 Generate Public and Private Key Pairs
 
 ###### Create a new key pair
 
-| Key pair name | hadoop-clusterkeypair |
-| ------------- | --------------------- |
-|               |                       |
+| Key pair name        | hadoop-clusterkeypair |
+| -------------------- | --------------------- |
+| Defined by your self | `...`end with `.pem`  |
 
 ###### Download Key Pair
 
 - Save the Key Pair file to a location on your local computer
 - Name the file `hadoop-clusterkeypair.pem`
 
-##### Launch Instances
+##### 01.02.03 Launch Instances
 
 Select the Launch Instances button. This will bring you to a summary of your new Virtual Machine.
 
 Linked Resources
 
-- [Hadoop: Setting up Hadoop 2.6.0 (single node) on AWS EC2 Ubuntu AMI | Sagar Ruchandani's blog - https://sagarruchandani.wordpress.com/2015/08/01/h...](https://sagarruchandani.wordpress.com/2015/08/01/hadoop-setting-up-hadoop-2-6-0-single-node-on-aws-ec2-ubuntu-ami)
 - [Simplify Your Life With an SSH Config File - http://nerderati.com/2011/03/17/simplify-your-life...](http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file)
 
 #### 01.03 Setup WinSCP and puTTY
@@ -103,7 +101,6 @@ Additional links to WinSCP and Putty are provided below.
 
 Linked Resources
 
-- [Hadoop on Amazon AWS Part 2: Setup puTTY and WinSCP to connect to Amazon Hadoop Cluster - YouTube - https://youtu.be/lRQqR0Fm1oE?list=PLWsYJ2ygHmWhOvt...](https://youtu.be/lRQqR0Fm1oE?list=PLWsYJ2ygHmWhOvtHIPxGJDtki9SJlINCw)
 - [puTTY Download - http://www.chiark.greenend.org.uk/~sgtatham/putty/...](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 - [WinSCP Download - https://winscp.net/eng/download.php](https://winscp.net/eng/download.php)
 
