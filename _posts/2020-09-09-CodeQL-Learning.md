@@ -111,11 +111,27 @@ ECB模式作为一种基本工作模式，具有操作简单，易于实现的�
 
 #### 2.3. 实验
 
-在找到了上述三个Code Pattern后, 我们可以基于CodeQL这一代码语义分析引擎来分析脆弱的代码.
+根据上述三个`Code Pattern`, 我们可以基于CodeQL这一代码语义分析引擎来分析脆弱的代码.
 
-CodeQL可以离线在VS Code上使用, 也可以在线在LGTM官网上使用, 这里不再赘述.
+CodeQL可以离线在VS Code上使用, 也可以在线在`LGTM`官网上使用, 这里不再赘述.
 
 ##### 2.3.1. 数据流
 
 数据流是这一实验中的关键概念,它包括源结点, 阱结点和结点路径. 源结点可以看成变量的声明, 阱结点可以看成一个可能存放变量的容器. 如果源结点中定义的变量可以被映射到阱结点中, 那么流迹就可以得到建立.
+
+##### 2.3.2.  误用规则一
+
+##### 2.3.3. 误用规则二
+
+利用`Misuse2.ql`对`structurizr_java_java-src`这一`CodeBase`进行分析，发现`AesEncryptionStrategy.java`文件里存在两处误用：
+
+![image-20200912000320438](https://raw.githubusercontent.com/Lov3Camille/postimage/master/20200912000320.png)
+
+根据显示的结果，两个声明为`iv`的字符串变量经过`parseHexBinary()`方法传递到构造器方法`IvParameterSpec()`.
+
+文件中误用代码的位置如下图：
+
+![image-20200912000902498](https://raw.githubusercontent.com/Lov3Camille/postimage/master/20200912000902.png)
+
+##### 2.3.4. 误用规则三
 
