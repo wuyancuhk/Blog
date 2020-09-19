@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Hadoop Learning Notes - 2"
-subtitle:   " \"Hadoop - a simple example - Word Count""
+subtitle:   " \"Hadoop - a simple example - Word Count\""
 date:       2020.09.19 23:29:00
 author:     "Wuy"
 header-img: "img/post-bg-2020.jpg"
