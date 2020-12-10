@@ -1,11 +1,16 @@
-***I declare that the assignment submitted on Elearning system is original except for source material explicitly acknowledged, and that the same or related material has not been previously submitted for another course. I also acknowledge that I am aware of University policy and regulations on honesty in academic work, and of the disciplinary guidelines and procedures applicable to breaches of such policy and regulations, as contained in the website*** 
+---
+layout:     post
+title:      "Hadoop Learning Notes - 5"
+subtitle:   " \"Hadoop - A-Priori\""
+date:       2020.12.10 23:29:00
+author:     "Wuy"
+header-img: "img/post-bg-2020.jpg"
+catalog: true
+tags:
 
-***http://www.cuhk.edu.hk/policy/academichonesty/.*** 
+    - Hadoop
 
-​                        Signed (Student_________________________)                                                                            Date:_________2020.10.29______
-
-​                        Name_______________WU Yan__________________                                                                                SID____________1155148594_______________
-
+---
 
 
 # 1. Q1

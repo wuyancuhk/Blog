@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Hadoop Learning Notes - 2"
+title:      "Hadoop Learning Notes - 4"
 subtitle:   " \"Hadoop - How to specify python version in Linux/hadoop\""
 date:       2020.11.01 23:29:00
 author:     "Wuy"

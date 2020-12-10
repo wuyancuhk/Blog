@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Computer Networks - History Notes"
-subtitle:   " \"Checksum\""
+subtitle:   " \"Computer Networks - Checksum\""
 date:       2020.12.10 19:00:00
 author:     "Wuy"
 header-img: "img/post-bg-2020.jpg"
@@ -9,6 +9,8 @@ catalog: true
 tags:
     - 学习笔记
     - 计算机网络
+
+
 
 ---
 
