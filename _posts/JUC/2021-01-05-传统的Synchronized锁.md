@@ -163,9 +163,92 @@ class ticket {
 
 ## `synchronized`锁和`Lock`锁的区别
 
+1. `synchronized`是内置的Java关键字，`Lock`是一个Java类；
+2. 前者无法判断获取的锁的状态，`Lock`是可以的；
+3. 前者会自动释放锁，后者必须要手动释放锁，不然会出现死锁问题；
+4. 前者会导致另一个线程持续等待，后者可以通过`tryLock()`来尝试获取锁；
+5. 前者是可重入锁，不可中断，是公平锁；后者也是可重入锁，可以判断锁，以及设置是否公平；
+6. 前者适合锁少量的代码同步问题，后者适合大量的同步代码。
 
+## 锁是什么，如何判断加锁的对象是什么
 
+1. 生产者和消费者问题（等待->业务->通知）：
 
+   - `synchronized`版本：
+
+     ```java
+     package org.lov3camille.trend;
+     
+     public class synchronizedTest {
+     
+         public static void main(String[] args) {
+             Data data = new Data();
+     
+             new Thread(() -> {
+                 for (int i = 0; i < 10; i ++) {
+                     try {
+                         data.increment();
+                     } catch (InterruptedException e) {
+                         e.printStackTrace();
+                     }
+                 }
+             }, "A").start();
+     
+             new Thread(() -> {
+                 for (int i = 0; i < 10; i ++) {
+                     try {
+                         data.decrement();
+                     } catch (InterruptedException e) {
+                         e.printStackTrace();
+                     }
+                 }
+             }, "B").start();
+     
+             new Thread(() -> {
+                 for (int i = 0; i < 10; i ++) {
+                     try {
+                         data.increment();
+                     } catch (InterruptedException e) {
+                         e.printStackTrace();
+                     }
+                 }
+             }, "C").start();
+         }
+     
+     }
+     
+     class Data {
+         private int num = 0;
+     
+         public synchronized void increment() throws InterruptedException {
+             if (num != 0) {
+                 this.wait();
+             }
+             num ++;
+     
+             System.out.println(Thread.currentThread().getName() + "=>" + num);
+     
+             this.notifyAll();
+         }
+     
+         public synchronized void decrement() throws InterruptedException {
+             if (num == 0) {
+                 this.wait();
+             }
+             num --;
+     
+             System.out.println(Thread.currentThread().getName() + "=>" + num);
+     
+             this.notifyAll();
+         }
+     }
+     ```
+
+   - 但上述的代码可能会导致“虚假唤醒"问题，需要将`if`判断改为`while`判断：
+
+     ![image-20210107163339951](https://i.loli.net/2021/01/07/c7gOT86irfaxdjG.png)
+
+     因为`if`只会执行一次，执行完会接着向下执行`if()`外边的 而`while`不会，直到条件满足才会向下执行`while()`外边的
 
 
 
