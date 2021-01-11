@@ -152,11 +152,10 @@ class ticket {
            }
        }
    }
-   
    ```
-
    
 
+   
 2. `ReadWriteLock`读写锁：
 
    ![image-20210105223020496](https://i.loli.net/2021/01/05/dJq6ID43HWTVCv1.png)
@@ -244,11 +243,149 @@ class ticket {
      }
      ```
 
-   - 但上述的代码可能会导致“虚假唤醒"问题，需要将`if`判断改为`while`判断：
+     - 但上述的代码可能会导致“虚假唤醒"问题，需要将`if`判断改为`while`判断：
 
-     ![image-20210107163339951](https://i.loli.net/2021/01/07/c7gOT86irfaxdjG.png)
+       ![image-20210107163339951](https://i.loli.net/2021/01/07/c7gOT86irfaxdjG.png)
 
-     因为`if`只会执行一次，执行完会接着向下执行`if()`外边的 而`while`不会，直到条件满足才会向下执行`while()`外边的
+       因为`if`只会执行一次，执行完会接着向下执行`if()`外边的 而`while`不会，直到条件满足才会向下执行`while()`外边的。
+   
+   - `Lock`方法：
+   
+     - ```java
+       //官方示例
+       class BoundedBuffer {
+          final Lock lock = new ReentrantLock();
+          final Condition notFull  = lock.newCondition(); 
+          final Condition notEmpty = lock.newCondition(); 
+       
+          final Object[] items = new Object[100];
+          int putptr, takeptr, count;
+       
+          public void put(Object x) throws InterruptedException {
+            lock.lock();
+            try {
+              while (count == items.length)
+                notFull.await();
+              items[putptr] = x;
+              if (++putptr == items.length) putptr = 0;
+              ++count;
+              notEmpty.signal();
+            } finally {
+              lock.unlock();
+            }
+          }
+       
+          public Object take() throws InterruptedException {
+            lock.lock();
+            try {
+              while (count == 0)
+                notEmpty.await();
+              Object x = items[takeptr];
+              if (++takeptr == items.length) takeptr = 0;
+              --count;
+              notFull.signal();
+              return x;
+            } finally {
+              lock.unlock();
+            }
+          }
+        }
+       ```
+   
+     - 顺序打印“ABC”:
+   
+       ```java
+       package org.lov3camille.trend;
+       
+       import java.util.concurrent.locks.Condition;
+       import java.util.concurrent.locks.Lock;
+       import java.util.concurrent.locks.ReentrantLock;
+       
+       public class ConditionTest {
+           public static void main(String[] args) {
+               Data2 data2 = new Data2();
+       
+               new Thread(()->{
+                   for (int i = 0; i < 10; i ++) {
+                       data2.printA();
+                   }
+               }, "A").start();
+               new Thread(()->{
+                   for (int i = 0; i < 10; i ++) {
+                       data2.printB();
+                   }
+               }, "B").start();
+               new Thread(()->{
+                   for (int i = 0; i < 10; i ++) {
+                       data2.printC();
+                   }
+               }, "C").start();
+       
+           }
+       
+       }
+       
+       class Data2 {
+       
+           private final Lock lock = new ReentrantLock();
+           private final Condition condition1 = lock.newCondition();
+           private final Condition condition2 = lock.newCondition();
+           private final Condition condition3 = lock.newCondition();
+           private int num = 1;
+       
+           public void printA() {
+               lock.lock();
+               try {
+                   while (num != 1) {
+                       condition1.await();
+                   }
+                   System.out.println(Thread.currentThread().getName() + "->A");
+                   num = 2;
+                   condition2.signal();
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               } finally {
+                   lock.unlock();
+               }
+           }
+       
+           public void printB() {
+               lock.lock();
+               try {
+                   while (num != 2) {
+                       condition2.await();
+                   }
+                   System.out.println(Thread.currentThread().getName() + "->B");
+                   num = 3;
+                   condition3.signal();
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               } finally {
+                   lock.unlock();
+               }
+           }
+       
+           public void printC() {
+               lock.lock();
+               try {
+                   while (num != 3) {
+                       condition3.await();
+                   }
+                   System.out.println(Thread.currentThread().getName() + "->C");
+                   num = 1;
+                   condition1.signal();
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               } finally {
+                   lock.unlock();
+               }
+           }
+       
+       }
+       
+       ```
+   
+       
 
 
 
