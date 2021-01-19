@@ -28,3 +28,141 @@ Spring容器在初始化的时候先读取配置文件，根据配置文件或�
 采用XML方式配置Bean的时候，Bean的定义信息是和实现分离的，而采用注解的方式可以把两者合为一体，Bean的定义信息直接以注解的形式定义在实现类中，从而达到了零配置的目的。
 
 **控制反转是一种通过描述（XML或注解）并通过第三方去生产或获取特定的对象的方式，在Spring中实现控制反转的是IOC容器，其实现方法是依赖注入（Dependency Injection， DI）。**
+
+## Hello Spring
+
+1. 撰写配置文件：
+
+   ```xml
+   <?xml version="1.0" encoding="UTF-8"?>
+   <beans xmlns="http://www.springframework.org/schema/beans"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+       <!-- using Spring to create objects, they are all called Bean in Spring 
+       
+       id = variables name
+       class = object's absolute path
+       property = set a value for one of object's properties
+       
+       -->
+       <bean id = "hello" class="com.lov3camille.springtest.pojo.Hello">
+           <property name="str" value="Spring"/>
+   
+       </bean>
+   
+   </beans>
+   ```
+
+2. `Hello.java`
+
+   ```java
+   package com.lov3camille.springtest.pojo;
+   
+   public class Hello {
+   
+       String str;
+   
+       public void setStr(String str) {
+           this.str = str;
+       }
+   
+       public String getStr() {
+           return str;
+       }
+   
+       @Override
+       public String toString() {
+           return "Hello" + str;
+       }
+   }
+   
+   ```
+
+   
+
+3. `MyTest.java`
+
+   ```java
+   package com.lov3camille.springtest;
+   
+   import com.lov3camille.springtest.pojo.Hello;
+   import org.springframework.context.ApplicationContext;
+   import org.springframework.context.support.ClassPathXmlApplicationContext;
+   
+   public class MyTest {
+   
+       public static void main(String[] args) {
+   
+           // resolve applicationContext.xml file and generate/manage Bean object
+           ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+           // getBean()'s parameter is id of bean in .xml file
+           Hello hello = (Hello) context.getBean("hello");
+   
+           System.out.println(hello.toString());
+       }
+   }
+   ```
+
+4. 几个关键点：
+
+   - `Hello`对象是Spring创建的；
+   - `Hello`对象的属性是由Spring容器设置的。
+   - 上面几个过程就叫做控制反转：
+     - 控制：传统的应用程序的对象是程序本身创建的，使用Spring后，对象由后者创建；
+     - 反转：程序本身不创建对象，而变成被动地接收对象；
+     - 依赖注入：就是利用`set`方法来进行注入；
+   - `XML`文件中`ref`指引用容器中创建好的对象，`value`指具体的值，一般是基本数据类型；
+
+## IOC创建对象的方式
+
+1. 使用无参构造创建对象，这是默认的实现；
+2. 假设我们需要使用有参构造：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
