@@ -118,7 +118,31 @@ Spring容器在初始化的时候先读取配置文件，根据配置文件或�
 ## IOC创建对象的方式
 
 1. 使用无参构造创建对象，这是默认的实现；
+
 2. 假设我们需要使用有参构造：
+
+   - ```xml
+     <bean id = "hello" class="com.lov3camille.springtest.pojo.Hello">
+         <constructor-arg index="0" value="wuyantest"/>
+     </bean> 
+     <!-- 下标赋值 -->
+     ```
+
+   - ```xml
+     <bean id="user" class="com.lov3camille.springtest.pojo.Hello">
+     	<constructor-arg type="java.lang.String" value="wuyan"/>
+     </bean>
+     <!-- 通过类型创建，但是不建议使用 -->
+     ```
+
+   - ```xml
+     <bean id="user" class="com.lov3camille.springtest.pojo.Hello">
+     	<constructor-arg name="name" value="wuyan"/>
+     </bean>
+     <!-- 直接通过参数名来设置 -->
+     ```
+
+3. 注入Bean的时候，尽管没有显示地注入，Bean里的对象都会被实例化并输出（如果有构造器的话），而且只会有一个实例。
 
 
 
