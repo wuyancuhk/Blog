@@ -57,7 +57,7 @@ public class RedisAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(
-        name = {"redisTemplate"}
+        name = {"redisTemplate"} // 说明我们可以字节顶一个redisTemplate来替换这个默认值
     )
     public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) throws UnknownHostException {
         RedisTemplate<Object, Object> template = new RedisTemplate();
@@ -66,7 +66,7 @@ public class RedisAutoConfiguration {
     }
 
     @Bean
-    @ConditionalOnMissingBean
+    @ConditionalOnMissingBean // 由于String类型是最常使用的
     public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory redisConnectionFactory) throws UnknownHostException {
         StringRedisTemplate template = new StringRedisTemplate();
         template.setConnectionFactory(redisConnectionFactory);
@@ -76,3 +76,117 @@ public class RedisAutoConfiguration {
 
 ```
 
+## 整合测试
+
+1. 导入依赖：
+
+   ```xml
+   <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-data-redis</artifactId>
+           </dependency>
+   ```
+
+2. 配置连接：
+
+   ```properties
+   spring.redis.host=127.0.0.1
+   spring.redis.port=6379
+   ```
+
+3. 测试：
+
+   ```java
+   package com.lov3camille.springbootredis;
+   
+   import javafx.application.Application;
+   import org.junit.jupiter.api.Test;
+   import org.springframework.beans.factory.annotation.Autowired;
+   import org.springframework.boot.test.context.SpringBootTest;
+   import org.springframework.data.redis.connection.RedisConnection;
+   import org.springframework.data.redis.core.RedisTemplate;
+   
+   @SpringBootTest(classes = AppTest.class)
+   class SpringbootRedisApplicationTests {
+   
+       @Autowired
+       RedisTemplate redisTemplate;
+   
+       @Test
+       void contextLoads() {
+   
+           redisTemplate.opsForValue();
+           redisTemplate.opsForList();
+           redisTemplate.opsForHyperLogLog(); // operate different data type
+   
+           RedisConnection connection = redisTemplate.getConnectionFactory().getConnection();
+           connection.flushAll();
+           connection.flushDb(); // get redis connection object
+   
+           redisTemplate.opsForValue().set("mykey", "wuyan");
+           redisTemplate.opsForValue().get("mykey");
+       }
+   
+   }
+   
+   ```
+
+4. 序列化配置：
+
+   源码如下：
+
+   ```java
+   public class RedisTemplate<K, V> extends RedisAccessor implements RedisOperations<K, V>, BeanClassLoaderAware {
+       private boolean enableTransactionSupport = false;
+       private boolean exposeConnection = false;
+       private boolean initialized = false;
+       private boolean enableDefaultSerializer = true;
+       @Nullable
+       private RedisSerializer<?> defaultSerializer;
+       @Nullable
+       private ClassLoader classLoader;
+       @Nullable
+       private RedisSerializer keySerializer = null;
+       @Nullable
+       private RedisSerializer valueSerializer = null;
+       @Nullable
+       private RedisSerializer hashKeySerializer = null;
+       @Nullable
+       private RedisSerializer hashValueSerializer = null;
+       private RedisSerializer<String> stringSerializer = RedisSerializer.string();
+   ...
+       
+       
+       public void afterPropertiesSet() {
+           super.afterPropertiesSet();
+           boolean defaultUsed = false;
+           if (this.defaultSerializer == null) {
+               this.defaultSerializer = new JdkSerializationRedisSerializer(this.classLoader != null ? this.classLoader : this.getClass().getClassLoader());
+           }
+   
+           if (this.enableDefaultSerializer) {
+               if (this.keySerializer == null) {
+                   this.keySerializer = this.defaultSerializer;
+                   defaultUsed = true;
+               }
+   
+               if (this.valueSerializer == null) {
+                   this.valueSerializer = this.defaultSerializer;
+                   defaultUsed = true;
+               }
+   
+               if (this.hashKeySerializer == null) {
+                   this.hashKeySerializer = this.defaultSerializer;
+                   defaultUsed = true;
+               }
+   
+               if (this.hashValueSerializer == null) {
+                   this.hashValueSerializer = this.defaultSerializer;
+                   defaultUsed = true;
+               }
+           }
+   ```
+
+   默认的序列化方式是JDK模式，我们需要使用JSON方式序列化。
+
+## 自定义`RedisTemplete`
