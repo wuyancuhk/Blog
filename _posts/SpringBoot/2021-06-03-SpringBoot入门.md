@@ -4,7 +4,6 @@ title:      "SpringBoot - SpringBoot入门"
 subtitle:   " \"SpringBoot Knowledge - 1\""
 date:       2021.06.03 12:29:00
 author:     "Wuy"
-header-img: "img/post-bg-2020.jpg"
 catalog: true
 tags:
     - 学习笔记

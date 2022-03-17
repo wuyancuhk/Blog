@@ -100,13 +100,17 @@ page-mathjax: true
 
 
 
-# Friends
+# Idol
 friends: [
     {
     #     title: "Su",
     #     href: "http://su.gallery/"
     # },{
-        title: "王宇轩",
-        href: "https://xuanxuanblingbling.github.io/"
+        title: "Trustin Lee",
+        href: "https://github.com/trustin"
+    },
+    {
+      title: "antirez",
+      href: "https://github.com/antirez"
     }     
 ]
